@@ -1,0 +1,115 @@
+\input{preamble}
+
+
+\begin{document}
+% \usebackgroundtemplate{\includegraphics[width=\paperwidth]{img/bg.jpg}}
+\frame{\titlepage}
+
+% Przebieg prezentacji
+\begin{frame}
+  \frametitle{Przebieg prezentacji}
+  \tableofcontents
+\end{frame}
+
+% The following causes the table of contents to be shown 
+% at the beginning of every subsection. Delete this, if you do not want it.
+\AtBeginSubsection[]{
+  \frame<beamer>{
+    \frametitle{Przebieg prezentacji}
+    \tableofcontents[currentsection,currentsubsection]
+  }
+}
+
+
+\section{Jak wygląda pętla sprzężenia zwrotnego 
+    sterująca odwróconym wahadłem}
+    
+    \begin{frame}{Układ Automatycznej Regulacji (UAR)}
+    	\begin{figure}[!htp]
+    		\centering
+    		\includegraphics[width=\textwidth]{img/uar}
+    		\caption{UAR}
+    	\end{figure}
+    \end{frame}
+    
+    \begin{frame}{Zasada działania UAR}
+    \end{frame}
+    
+\section{Rodzaje stosowanych sterowników}
+	\begin{frame}{PID}
+    	\begin{figure}[!htp]
+    		\centering
+    		\includegraphics[width=\textwidth]{img/pid_real}
+    		\caption{Rzeczywisty regulator PID}
+    	\end{figure}
+	\end{frame}
+	
+	\begin{frame}{Kaskada}
+    	\begin{figure}[!htp]
+    		\centering
+    		\includegraphics[width=\textwidth]{img/kaskada}
+    		\caption{Układ kaskadowy}
+    	\end{figure}
+	\end{frame}
+	
+	\begin{frame}[t]{Sterownik rozmyty}
+		\only<1>
+		{
+    		\begin{figure}[!htp]
+    			\centering
+    			\includegraphics[width=0.48\textwidth]{img/fuzzy}
+    			\caption{Układ kaskadowy}
+    		\end{figure}
+    	}
+    	\only<2->
+    	{
+    		\begin{itemize}
+    			\item Podstawowe pojęcia. 
+    			  \pause
+    			\item Zasada działania sterownika rozmytego. 
+    			  \pause
+    			\item Przykłady kształtów funkcji przynależności.
+    		\end{itemize}
+    	}
+	\end{frame}
+  
+\section{Możliwe rozwiązania rozmyte}
+	\begin{frame}[t]{Czysty sterownik rozmyty}
+		\begin{itemize}
+			\item nie wykorzystujemy modelu z uwagi na
+				nieliniowość i trudne analitycznie algorytmy
+				sterowania
+				  \pause
+				
+			\item można poprawnie wysterować odwrócone wahadło
+				przy użyciu bazy reguł 
+				\pause
+				
+			\item łatwa implementacja algorytmu nieliniowej regulacji
+			    mimo trudnego modelu obiektu
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}[t]{Sterownik w kaskadzie z innymi sterownikami}
+		\begin{itemize}
+			\item używany w przypadku, gdy posiadany jest model,
+				ale właściwości sterownika wymagają korekcji
+				\pause
+				
+			\item pomaga w łatwym kształtowaniu charakterystyki częstotliwościowej
+		\end{itemize}
+	\end{frame}
+  
+
+
+\section{}
+\begin{frame}
+  \begin{center}
+    \huge
+    Dziękujemy za uwagę!
+  \end{center}
+ 
+
+\end{frame}
+
+\end{document}
